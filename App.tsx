@@ -1,8 +1,10 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, useColorScheme } from 'react-native';
 import { Home } from './src/pages/Home';
 
 export default function App() {
+  const deviceTheme = useColorScheme();
+
   return (
     <>
       <StatusBar 
@@ -10,7 +12,7 @@ export default function App() {
         translucent 
         barStyle="light-content" 
       />
-      <Home />
+      <Home deviceTheme={deviceTheme} />
     </>
   );
 }
